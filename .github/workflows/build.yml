@@ -12,17 +12,17 @@ on:
 jobs:
  flutter_job:
 
-   # The machine, we can also use windows-latest or ubuntu-latest
-   # We are choosing macos-latest because we will be also building for iOS
-   runs-on: macos-latest
+  # The machine, we can also use windows-latest or ubuntu-latest
+  # We are choosing macos-latest because we will be also building for iOS
+  runs-on: macos-latest
 
-   steps:
+  steps:
 
-     # Clones the project on the machine
-     - uses: actions/checkout@v4
+    # Clones the project on the machine
+    - uses: actions/checkout@v4
 
-     # Installs flutter and related dependency on this machine
-     - name: Setup Flutter
+    # Installs flutter and related dependency on this machine
+    - name: Setup Flutter
        uses: subosito/flutter-action@v2
        with:
          channel: 'stable'
@@ -30,9 +30,9 @@ jobs:
          # ^ If you want to use a specific version of flutter
 
     # Fetches proj dependencies from pub
-     - name: Install dependencies
-       run: flutter pub get
-         # ^ If you want to use a specific version of flutter
+    - name: Install dependencies
+      run: flutter pub get
+        # ^ If you want to use a specific version of flutter
 
     # Verifies if the dart code is formatted well
     - name: Verify formatting
